@@ -33,7 +33,7 @@ jobs:
     - name: Run Tests with Coverage
       run: |
         python manage.py migrate
-        coverage run --source='.' manage.py test
+        coverage run --source='polls' manage.py test
     - name: Generate Coverage Report
       run: |
         coverage report
