@@ -30,10 +30,17 @@ jobs:
     - name: Run Flake8
       run: |
         flake8 .
-    - name: Run Tests
+    - name: Run Tests with Coverage
       run: |
         python manage.py migrate
-        python manage.py test
+        coverage run --source='.' manage.py test
+    - name: Generate Coverage Report
+      run: |
+        coverage report
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
   
   deploy:
     needs: test  # Only run if tests pass
