@@ -2,11 +2,14 @@ branch-defaults:
   default:
     environment: swe-django-env
     group_suffix: null
+  main:
+    environment: swe-env
+    group_suffix: null
 global:
-  application_name: swe1
+  application_name: swe
   branch: null
   default_ec2_keyname: aws-eb
-  default_platform: Python 3.13 running on 64bit Amazon Linux 2023
+  default_platform: Python 3.11
   default_region: us-west-2
   include_git_submodules: true
   instance_profile: null
@@ -14,5 +17,5 @@ global:
   platform_version: null
   profile: null
   repository: null
-  sc: null
+  sc: git
   workspace_type: Application
